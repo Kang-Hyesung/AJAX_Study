@@ -31,7 +31,7 @@
 		var n2 = document.getElementById("num2").value;
 		
 		// URL 구성
-		var url = "test01.do?n1=" + n1 + "&n2=" + n2;
+		var url = "test02.do?n1=" + n1 + "&n2=" + n2;
 		
 		// XMLHttpRequest 객체 생성(-> AJAX 객체)
 		ajax = createAjax();						// ajax.js
@@ -60,6 +60,8 @@
 				if(ajax.status == 200)
 				{
 					// 업무 진행
+					// 업무 코드를 외부로 추출
+					callBack();
 				}
 			}
 		};
@@ -70,9 +72,25 @@
 		// 현재는 GET 방식의 요청이다. (비워두는 것은 하지 말자.)
 		ajax.send("");
 		
-		
 	}
-
+	
+	
+	// 추출된 업무 코드
+	// AJAX 요청이 완료된 후 호출되는 최종 업무 처리 함수
+	function callBack()
+	{
+		// 여기서는 두 가지 방법 중 하나로 데이터를 바인딩한다.
+		
+		// 1. 서버에서 응답한 데이터가 텍스트일 경우(단일 데이터)
+		var data = ajax.responseText;
+		
+		// 2. 서버에서 응답한 데이터가 XML 일 경우(다량의 데이터)
+		// var data = ajax.responseXML;
+		
+		// 바인딩한 데이터를 업무에 적용한다.
+		document.getElementById("result").value = data;
+	}
+	
 </script>
 
 </head>
@@ -125,18 +143,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

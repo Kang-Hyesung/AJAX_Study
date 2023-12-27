@@ -26,16 +26,12 @@
 
 	function check()
 	{
-		// 확인
 		//alert("함수 호출");
 		
-		// 데이터 수집
 		var id = document.getElementById("id").value;
 		
-		// URL 구성
 		var url = "test03.do?id=" + id;
 		
-		// XMLHttpRequest 객체 생성
 		ajax = createAjax();					
 		
 		ajax.open("GET", url, true);		
@@ -56,9 +52,12 @@
 	}
 	
 	
-
+	// 아이디 중복 검사의 결과(1 or 0)를 통보받아
+	// 사용자에게 메세지 출력 -> span -> #result
 	function callBack()
 	{
+		// 외부로 추출된 업무 처리 내용 구성(responseText/responseXML)
+		
 		var data = ajax.responseText;
 
 		document.getElementById("result").innerHTML = data;
@@ -105,19 +104,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

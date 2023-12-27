@@ -1,5 +1,6 @@
 /*=========================
- 	Test02Send.java
+ 	ServletSample.java
+ 	- Servlet 관련 실습
  ========================*/
 
 // HttpServlet 을 상속받는 클래스로 설계 -> Servlet
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 // HttpServlet 은 추상클래스이지만 추상메소드가 없다
-public class Test03Send extends HttpServlet
+public class Test04Send extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -46,13 +47,12 @@ public class Test03Send extends HttpServlet
 		// Get 방식이든 Post 방식이든
 		// 어던 방식의 요청에도 모두 처리할 수 있는 사용자 정의 메소드
 		
-		//String view = "WEB-INF/view/AjaxTest03.jsp";
-		String view = "AjaxTest03.jsp";
+		//String view = "WEB-INF/view/AjaxTest04.jsp";
+		String view = "AjaxTest04.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 	}
-	
 }
 
 

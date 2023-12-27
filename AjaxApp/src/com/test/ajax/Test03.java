@@ -1,5 +1,5 @@
 /*=========================
- 	    Test02.java
+ 	    Test03.java
  ========================*/
 
 // HttpServlet 을 상속받는 클래스로 설계 -> Servlet
@@ -7,6 +7,7 @@
 package com.test.ajax;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -47,19 +48,42 @@ public class Test03 extends HttpServlet
 	{
 		String id = request.getParameter("id");
 		
-		Set<String> set = new HashSet<String>();
+		// id 가 pbg 일 경우
+		// Model -> DB 액션 처리 요청 -> DAO (처리 요청)
+		//								 --------------
+		//								 DTO, Connection 활용
+		// SELECT COUNT (*) AS COUNT FROM MEMBER WHERE ID = 'pbg';
+		//		  ------------------						 ---
+		//             수신 처리    		    		 넘겨주는 데이터
+		//		       --==>> 1 OR 0
 		
-		set.add("superman");
-		set.add("batman");
-		set.add("admin");
+		// ※ DB 구성을 별도로 하지 않았기 때문에 
+		//    컬렉션 자료구조로 대신함
+		/*
+		 * Set<String> set = new HashSet<String>();
+		 * 
+		 * set.add("superman"); set.add("batman"); set.add("admin");
+		 * 
+		 * String a = "가입 가능"; String b = "가입 불가";
+		 * 
+		 * if(set.add(id)) request.setAttribute("result", a); else
+		 * request.setAttribute("result", b);
+		 */
 		
-		String a = "가입 가능";
-		String b = "가입 불가";
+		ArrayList<String> db = new ArrayList<String>();
+		db.add("superman");
+		db.add("batman");
+		db.add("admin");
 		
-		if(set.add(id))
-			request.setAttribute("result", a);
-		else
-			request.setAttribute("result", b);
+		int result = 0;
+		
+		for(String item:db)
+		{
+			if(item.equals(id))
+				result = 1;
+		}
+		
+		request.setAttribute("result", result);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Test03_ok.jsp");
 		dispatcher.forward(request, response);

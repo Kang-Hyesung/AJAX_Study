@@ -56,7 +56,7 @@
   
   <servlet-mapping>
   	<servlet-name>test03send</servlet-name>
-  	<url-pattern>/test03se                          nd.do</url-pattern>
+  	<url-pattern>/test03send.do</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -69,8 +69,27 @@
   	<url-pattern>/test03.do</url-pattern>
   </servlet-mapping>
   
+  <!--  	                  4                           -->
   
+  <servlet>
+  	<servlet-name>test04send</servlet-name>
+  	<servlet-class>com.test.ajax.Test04Send</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+  	<servlet-name>test04send</servlet-name>
+  	<url-pattern>/test04send.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>test04</servlet-name>
+  	<servlet-class>com.test.ajax.Test04</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>test04</servlet-name>
+  	<url-pattern>/test04.do</url-pattern>
+  </servlet-mapping>
   
   
   

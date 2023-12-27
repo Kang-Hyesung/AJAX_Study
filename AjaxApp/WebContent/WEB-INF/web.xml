@@ -47,7 +47,27 @@
   
   
   
+  <!-- 					    실습	     				 -->
   
+  <servlet>
+  	<servlet-name>test03send</servlet-name>
+  	<servlet-class>com.test.ajax.Test03Send</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>test03send</servlet-name>
+  	<url-pattern>/test03se                          nd.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>test03</servlet-name>
+  	<servlet-class>com.test.ajax.Test03</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>test03</servlet-name>
+  	<url-pattern>/test03.do</url-pattern>
+  </servlet-mapping>
   
   
   

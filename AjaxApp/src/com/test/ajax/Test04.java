@@ -91,8 +91,8 @@ public class Test04 extends HttpServlet
 		
 		request.setAttribute("lists", db);
 		
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/view/Test04_ok.jsp");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Test04_ok.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/view/Test04_ok.jsp");
+		//RequestDispatcher dispatcher = request.getRequestDispatcher("Test04_ok.jsp");
 		dispatcher.forward(request, response);
 		
 	}

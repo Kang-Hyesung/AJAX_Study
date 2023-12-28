@@ -126,7 +126,62 @@
 		else
 		{
 			document.getElementById("addrResult").innerHTML
-				= "<option>주소를 선택하세요.</option>";
+				= "<option value='0'>주소를 선택하세요.</option>";
+		}
+		
+		// 검색 결과가 존재할 경우
+		// 반복문을 순환하며 각 데이터 가져오기
+		for (var i = 0; i < itemList.length; i++) // 수신한 아이템의 갯수만큼 반복 순환
+		{
+			var zipcode = itemList[i].getElementsByTagName("zipcode")[0];
+			var address = itemList[i].getElementsByTagName("address")[0];
+			
+			// ※ 태그가 가지는 텍스트는
+			//    태그의 첫 번째 자식이고
+			//    텍스트 노드의 값은
+			//    nodeValue 로 가져온다.
+			
+			var zipcodeText = zipcode.firstChild.nodeValue;
+			var addressText = address.firstChild.nodeValue;
+			
+			// select box 에 아이템(<option></option>) 추가
+			document.getElementById("addrResult").innerHTML
+					+= "<option value='" + zipcodeText + "/" + addressText 
+					+  "'>[" + zipcodeText + "] " + addressText + "</option>";
+			
+		}
+	}
+	
+	function change()
+	{
+		var addr = document.getElementById("addrResult").value;
+		
+		var addr1 = addr.substring(0,5);
+		var addr2 = addr.substring(6);
+		
+		document.getElementById("addr1").value = addr1;
+		document.getElementById("addr2").value = addr2;
+		
+		document.getElementById("addr3").focus();
+	}
+	
+	
+	// 수업
+	function selectZipCode(sel)
+	{
+		//alert(sel.value);
+		
+		/*
+		document.getElementById("addr1").value = sel.value.split("/")[0];
+		document.getElementById("addr2").value = sel.value.split("/")[1];
+		document.getElementById("addr3").focus();
+		*/
+		
+		if(sel.value != "0")
+		{
+			document.getElementById("addr1").value = sel.value.split("/")[0];
+			document.getElementById("addr2").value = sel.value.split("/")[1];
+			document.getElementById("addr3").focus();
 		}
 	}
 
@@ -163,7 +218,8 @@
 			<input type="text" id="addr" class="txt control" />
 			<input type="button" value="검색하기" class="btn control" onclick="search()">
 			<br>
-			<select id="addrResult" class="control">
+			<!-- <select id="addrResult" class="control" onchange="change()"> -->
+			<select id="addrResult" class="control" onchange="selectZipCode(this)">
 				<option>주소를 입력하세요</option>
 			</select>
 		</td>
@@ -173,13 +229,13 @@
 		<th>주소 검색 결과</th>
 		<td>
 			<input type="text" id="addr1" class="txt control" readonly="readonly"
-			style="width: 200px;"/>
+			style="width: 100px;" disabled="disabled"/>
 			<br>
 			<input type="text" id="addr2" class="txt control" readonly="readonly"
-			style="width: 400px;"/>
+			style="width: 500px;" disabled="disabled"/>
 			<br>
 			<input type="text" id="addr3" class="txt control" placeholder="상세주소를 입력하세요."
-			style="width: 400px;"/>
+			style="width: 500px;"/>
 			<br>
 		</td>
 	</tr>

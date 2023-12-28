@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 // HttpServlet 은 추상클래스이지만 추상메소드가 없다
-public class Test04Send extends HttpServlet
+public class Test05Send extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -47,12 +47,14 @@ public class Test04Send extends HttpServlet
 		// Get 방식이든 Post 방식이든
 		// 어던 방식의 요청에도 모두 처리할 수 있는 사용자 정의 메소드
 		
-		String view = "WEB-INF/view/AjaxTest04.jsp";
-		//String view = "AjaxTest04.jsp";
+		String view = "WEB-INF/view/AjaxTest05.jsp";
+		//String view = "AjaxTest05.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
+		
 	}
+	
 }
 
 

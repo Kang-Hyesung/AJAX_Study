@@ -46,8 +46,8 @@ public class Test02Send extends HttpServlet
 		// Get 방식이든 Post 방식이든
 		// 어던 방식의 요청에도 모두 처리할 수 있는 사용자 정의 메소드
 		
-		//String view = "WEB-INF/view/AjaxTest02.jsp";
-		String view = "AjaxTest02.jsp";
+		String view = "WEB-INF/view/AjaxTest02.jsp";
+		//String view = "AjaxTest02.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);

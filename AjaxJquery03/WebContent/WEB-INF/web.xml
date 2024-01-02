@@ -42,6 +42,26 @@
   	<url-pattern>/posttest02.do</url-pattern>
   </servlet-mapping>
    
+  <!-- 03 -->
+  <servlet>
+  	<servlet-name>ajaxtest03</servlet-name>
+  	<servlet-class>com.test.ajax.AjaxTest03Controller</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ajaxtest03</servlet-name>
+  	<url-pattern>/ajaxtest03.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>test03ok</servlet-name>
+  	<servlet-class>com.test.ajax.AjaxTest03OkController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>test03ok</servlet-name>
+  	<url-pattern>ajaxtest03ok.do</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 

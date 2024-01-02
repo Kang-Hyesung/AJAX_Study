@@ -20,4 +20,44 @@
   	<url-pattern></url-pattern>
   </servlet-mapping>
    -->
+   
+   
+  <servlet>
+  	<servlet-name>posttest02ok</servlet-name>
+  	<servlet-class>com.test.ajax.PostTest02OkController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>posttest02ok</servlet-name>
+  	<url-pattern>/posttest02ok.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>posttest02</servlet-name>
+  	<servlet-class>com.test.ajax.PostTest02Controller</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>posttest02</servlet-name>
+  	<url-pattern>/posttest02.do</url-pattern>
+  </servlet-mapping>
+   
 </web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

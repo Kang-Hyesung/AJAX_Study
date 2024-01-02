@@ -38,7 +38,7 @@
 			//				     미리 구성 및 인코딩 된 쿼리 스트링.
 			//      - callBack : (Function) 요청이 완료되면 호출되는 함수.
 			
-			$.post("PostTest01_ok.jsp"
+			$.post("posttest02ok.do"
 			, {title:$("#title").val(), content:$("#content").val()}
 			, function(data)
 			{

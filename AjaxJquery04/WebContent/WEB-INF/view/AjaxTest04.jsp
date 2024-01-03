@@ -46,12 +46,12 @@
 						out += "<br> 내용 : " + content;
 						out += "<br>=========================";
 						
+					});
 						$("#resultDiv").html(out);
 						
 						$("#title").val("");
 						$("#content").val("");
 						$("#title").focus();
-					})
 				}
 				, beforeSend:showRequest
 				, error:function(e)

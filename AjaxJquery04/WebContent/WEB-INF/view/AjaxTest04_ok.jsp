@@ -5,12 +5,13 @@
 	String cp = request.getContextPath();
 %><%
 	
-	String title = request.getParameter("title");
-	String content = request.getParameter("content");
+	//String title = request.getParameter("title");
+	//String content = request.getParameter("content");
 	
 	response.setContentType("text/xml");
 	
 %><?xml version="1.0" encoding="UTF-8"?>
+<%-- 
 <root>
 	<status>true</status>
 	<%
@@ -24,4 +25,21 @@
 	<%
 	}
 	%>
+</root>
+ --%>
+
+<root>
+	<status>true</status>
+	<%
+	for(int i = 1; i <= 2; i++)
+	{
+	%>
+	<records id="<%=i%>">
+		<title>${title }</title>
+		<content>${content }</content>
+	</records>
+	<%
+	}
+	%>
+	
 </root>

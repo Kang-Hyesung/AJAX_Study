@@ -68,28 +68,3 @@ public class AjaxTest04Controller extends HttpServlet
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

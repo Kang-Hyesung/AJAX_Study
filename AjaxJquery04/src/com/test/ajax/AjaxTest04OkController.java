@@ -48,7 +48,15 @@ public class AjaxTest04OkController extends HttpServlet
 		// 어던 방식의 요청에도 모두 처리할 수 있는 사용자 정의 메소드
 		
 		String view = "WEB-INF/view/AjaxTest04_ok.jsp";
-			
+		
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		
+		System.out.println(title);
+		
+		request.setAttribute("title", title);
+		request.setAttribute("content", content);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 	}
